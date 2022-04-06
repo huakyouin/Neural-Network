@@ -184,7 +184,7 @@ if Lossmethod=='softmax':
 
 随后我对使用不同损失函数的模型进行了对比试验:
 
-```
+```bash
 # softmax
 # Training Iterations = 0, validation error = 0.899600
 # Training Iterations = 40000, validation error = 0.271800
