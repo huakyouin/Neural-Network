@@ -162,17 +162,12 @@ if (verr-min_verr) / min_verr > 5e-2 and flag==0:
 ## 5. softmax
 
 对于softmax损失函数 ,有以下理论:
-    
 $$
 \begin{array}{l}
 p\left(y_{i}\right) =\frac{\exp \left(z_{i}\right)}{\sum_{j=1}^{c} \exp \left(z_{j}\right)} \\
 L =-\ln \left(p\left(y_{i}\right)\right),\\
-\frac{\mathrm{d} L}{\mathrm{~d} y_{i}}=\left\{\begin{array}{rl}
-p\left(y_{i}\right)-1 & i=j \\
-p\left(y_{j}\right) & i \neq j
-\end{array}\right.
+\frac{\mathrm{d} L}{\mathrm{~d} y_{i}}=p\left(y_{i}\right)-1(i=j)
 \end{array}
-    
 $$
 在实现上只需要对损失函数部分进行修改:
 
