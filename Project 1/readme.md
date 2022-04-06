@@ -41,7 +41,7 @@
 ## 2. 权重下降时带动量
 
 基于理论：
-![1](http://latex.codecogs.com/svg.latex?\\\\w^{t+1}=w^{t}-\alpha_{t} \nabla f\left(w^{t}\right)+\beta_{t}\left(w^{t}-w^{t-1}\right)\\\\)
+![1](http://latex.codecogs.com/svg.latex?w^{t+1}=w^{t}-\alpha_{t} \nabla f(w^{t})+\beta_{t}(w^{t}-w^{t-1}))
 只要对源代码中权重更新处稍作修改即可让权重下降时带动量：
 
 ```python
