@@ -41,6 +41,7 @@
 ## 2. 权重下降时带动量
 
 基于理论：
+    
 $$
 w^{t+1}=w^{t}-\alpha_{t} \nabla f\left(w^{t}\right)+\beta_{t}\left(w^{t}-w^{t-1}\right)
 $$
