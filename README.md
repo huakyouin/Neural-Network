@@ -2,7 +2,7 @@
 DATA130011.01
 
 # 课程名称
-Neural-Network-and-Deep-Learning
+Neural-Network-and-Deep-Learning(神经网络与深度学习)
 
 # 描述
-课程神经网络与深度学习的pj收录
+课程中的的pj收录
