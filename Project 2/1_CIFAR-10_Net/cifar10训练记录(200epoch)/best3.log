@@ -1,0 +1,701 @@
+nohup: ignoring input
+  0%|          | 0/200 [00:00<?, ?it/s]======user config========
+{'Erase': True,
+ 'activation': 'GELU',
+ 'activation_positive': True,
+ 'batchsize': 128,
+ 'datapath': 'default',
+ 'download': False,
+ 'lr': 0.1,
+ 'max_epoch': 200,
+ 'mode': 'train',
+ 'model_chosen': 'ResNet9_MaxDropout',
+ 'opt': 'SGD',
+ 'scheduler': 'Cos',
+ 'show_net': True,
+ 'weight_decay': 0.0005}
+==========end============
+数据集位置:  /remote-home/jiaxinghua/NNDL_PJ2
+Load Time Cost: 6.066741943359375
+==> Building model ResNet9_MaxDropout..
+ResNet9_MaxDropout(
+  (dropout): MaxDropout()
+  (layer): Sequential(
+    (0): cbr(
+      (layer): Sequential(
+        (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+      )
+    )
+    (1): cbr(
+      (layer): Sequential(
+        (0): Conv2d(64, 128, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+      )
+    )
+    (2): Residual(
+      (module): Sequential(
+        (0): cbr(
+          (layer): Sequential(
+            (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace=True)
+          )
+        )
+        (1): cbr(
+          (layer): Sequential(
+            (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace=True)
+          )
+        )
+      )
+    )
+    (3): MaxDropout()
+    (4): cbr(
+      (layer): Sequential(
+        (0): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+      )
+    )
+    (5): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (6): Residual(
+      (module): Sequential(
+        (0): cbr(
+          (layer): Sequential(
+            (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace=True)
+          )
+        )
+        (1): cbr(
+          (layer): Sequential(
+            (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace=True)
+          )
+        )
+      )
+    )
+    (7): MaxDropout()
+    (8): cbr(
+      (layer): Sequential(
+        (0): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+      )
+    )
+    (9): AMP2d(
+      (layer): AdaptiveMaxPool2d(output_size=(1, 1))
+    )
+    (10): Flatten()
+    (11): Linear(in_features=128, out_features=10, bias=False)
+  )
+)
+==> training ..
+======epoch: 1, lr: 0.09999, Loss: 1.994======
+Accuracy of the network on train set: 37.88 %
+  0%|          | 1/200 [00:43<2:23:34, 43.29s/it]Accuracy of the network on test set: 40.32 %
+======epoch: 2, lr: 0.09998, Loss: 1.456======
+Accuracy of the network on train set: 53.95 %
+  1%|          | 2/200 [01:25<2:21:52, 42.99s/it]Accuracy of the network on test set: 57.44 %
+======epoch: 3, lr: 0.09994, Loss: 1.186======
+Accuracy of the network on train set: 61.28 %
+  2%|▏         | 3/200 [02:07<2:20:15, 42.72s/it]Accuracy of the network on test set: 64.45 %
+======epoch: 4, lr: 0.09990, Loss: 1.018======
+Accuracy of the network on train set: 60.95 %
+  2%|▏         | 4/200 [02:49<2:18:59, 42.55s/it]Accuracy of the network on test set: 64.78 %
+======epoch: 5, lr: 0.09985, Loss: 0.908======
+Accuracy of the network on train set: 68.81 %
+  2%|▎         | 5/200 [03:31<2:17:39, 42.36s/it]Accuracy of the network on test set: 71.89 %
+======epoch: 6, lr: 0.09978, Loss: 0.822======
+Accuracy of the network on train set: 71.91 %
+  3%|▎         | 6/200 [04:14<2:17:02, 42.39s/it]Accuracy of the network on test set: 75.40 %
+======epoch: 7, lr: 0.09970, Loss: 0.772======
+Accuracy of the network on train set: 73.37 %
+  4%|▎         | 7/200 [04:56<2:15:59, 42.28s/it]Accuracy of the network on test set: 75.81 %
+======epoch: 8, lr: 0.09961, Loss: 0.719======
+Accuracy of the network on train set: 75.45 %
+  4%|▍         | 8/200 [05:38<2:15:17, 42.28s/it]Accuracy of the network on test set: 78.44 %
+======epoch: 9, lr: 0.09950, Loss: 0.692======
+Accuracy of the network on train set: 74.39 %
+  4%|▍         | 9/200 [06:20<2:14:43, 42.32s/it]Accuracy of the network on test set: 77.79 %
+======epoch: 10, lr: 0.09938, Loss: 0.669======
+Accuracy of the network on train set: 70.13 %
+  5%|▌         | 10/200 [07:03<2:14:18, 42.41s/it]Accuracy of the network on test set: 72.53 %
+======epoch: 11, lr: 0.09926, Loss: 0.640======
+Accuracy of the network on train set: 73.00 %
+  6%|▌         | 11/200 [07:46<2:13:50, 42.49s/it]Accuracy of the network on test set: 75.48 %
+======epoch: 12, lr: 0.09911, Loss: 0.634======
+Accuracy of the network on train set: 75.02 %
+  6%|▌         | 12/200 [08:33<2:17:21, 43.84s/it]Accuracy of the network on test set: 77.30 %
+======epoch: 13, lr: 0.09896, Loss: 0.610======
+Accuracy of the network on train set: 74.37 %
+  6%|▋         | 13/200 [09:27<2:26:39, 47.06s/it]Accuracy of the network on test set: 78.41 %
+======epoch: 14, lr: 0.09880, Loss: 0.598======
+Accuracy of the network on train set: 75.12 %
+  7%|▋         | 14/200 [10:22<2:33:05, 49.38s/it]Accuracy of the network on test set: 76.86 %
+======epoch: 15, lr: 0.09862, Loss: 0.580======
+Accuracy of the network on train set: 71.13 %
+  8%|▊         | 15/200 [11:17<2:37:26, 51.06s/it]Accuracy of the network on test set: 75.82 %
+======epoch: 16, lr: 0.09843, Loss: 0.578======
+Accuracy of the network on train set: 77.12 %
+  8%|▊         | 16/200 [12:12<2:40:01, 52.18s/it]Accuracy of the network on test set: 80.00 %
+======epoch: 17, lr: 0.09823, Loss: 0.573======
+Accuracy of the network on train set: 78.12 %
+  8%|▊         | 17/200 [13:07<2:41:48, 53.05s/it]Accuracy of the network on test set: 81.37 %
+======epoch: 18, lr: 0.09801, Loss: 0.558======
+Accuracy of the network on train set: 78.40 %
+  9%|▉         | 18/200 [14:02<2:42:30, 53.57s/it]Accuracy of the network on test set: 80.48 %
+======epoch: 19, lr: 0.09779, Loss: 0.559======
+Accuracy of the network on train set: 79.75 %
+ 10%|▉         | 19/200 [14:56<2:42:26, 53.85s/it]Accuracy of the network on test set: 82.57 %
+======epoch: 20, lr: 0.09755, Loss: 0.550======
+Accuracy of the network on train set: 75.05 %
+ 10%|█         | 20/200 [15:51<2:42:22, 54.12s/it]Accuracy of the network on test set: 78.39 %
+======epoch: 21, lr: 0.09730, Loss: 0.545======
+Accuracy of the network on train set: 77.92 %
+ 10%|█         | 21/200 [16:46<2:41:57, 54.29s/it]Accuracy of the network on test set: 81.23 %
+======epoch: 22, lr: 0.09704, Loss: 0.532======
+Accuracy of the network on train set: 78.90 %
+ 11%|█         | 22/200 [17:37<2:38:17, 53.36s/it]Accuracy of the network on test set: 82.72 %
+======epoch: 23, lr: 0.09677, Loss: 0.535======
+Accuracy of the network on train set: 76.98 %
+ 12%|█▏        | 23/200 [18:28<2:35:47, 52.81s/it]Accuracy of the network on test set: 79.47 %
+======epoch: 24, lr: 0.09649, Loss: 0.535======
+Accuracy of the network on train set: 81.12 %
+ 12%|█▏        | 24/200 [19:30<2:42:26, 55.38s/it]Accuracy of the network on test set: 84.01 %
+======epoch: 25, lr: 0.09619, Loss: 0.518======
+Accuracy of the network on train set: 75.10 %
+ 12%|█▎        | 25/200 [20:36<2:51:20, 58.75s/it]Accuracy of the network on test set: 77.87 %
+======epoch: 26, lr: 0.09589, Loss: 0.523======
+Accuracy of the network on train set: 76.83 %
+ 13%|█▎        | 26/200 [21:43<2:57:19, 61.15s/it]Accuracy of the network on test set: 80.17 %
+======epoch: 27, lr: 0.09557, Loss: 0.518======
+Accuracy of the network on train set: 80.70 %
+ 14%|█▎        | 27/200 [22:50<3:01:17, 62.87s/it]Accuracy of the network on test set: 83.06 %
+======epoch: 28, lr: 0.09524, Loss: 0.515======
+Accuracy of the network on train set: 74.46 %
+ 14%|█▍        | 28/200 [23:57<3:03:59, 64.18s/it]Accuracy of the network on test set: 76.78 %
+======epoch: 29, lr: 0.09490, Loss: 0.512======
+Accuracy of the network on train set: 77.80 %
+ 14%|█▍        | 29/200 [25:05<3:05:49, 65.20s/it]Accuracy of the network on test set: 79.78 %
+======epoch: 30, lr: 0.09455, Loss: 0.515======
+Accuracy of the network on train set: 80.94 %
+ 15%|█▌        | 30/200 [26:12<3:06:41, 65.89s/it]Accuracy of the network on test set: 83.82 %
+======epoch: 31, lr: 0.09419, Loss: 0.509======
+Accuracy of the network on train set: 73.02 %
+ 16%|█▌        | 31/200 [27:20<3:06:46, 66.31s/it]Accuracy of the network on test set: 76.09 %
+======epoch: 32, lr: 0.09382, Loss: 0.499======
+Accuracy of the network on train set: 80.39 %
+ 16%|█▌        | 32/200 [28:21<3:01:10, 64.70s/it]Accuracy of the network on test set: 82.24 %
+======epoch: 33, lr: 0.09343, Loss: 0.499======
+Accuracy of the network on train set: 82.66 %
+ 16%|█▋        | 33/200 [29:15<2:51:35, 61.65s/it]Accuracy of the network on test set: 84.19 %
+======epoch: 34, lr: 0.09304, Loss: 0.492======
+Accuracy of the network on train set: 77.62 %
+ 17%|█▋        | 34/200 [30:10<2:44:45, 59.55s/it]Accuracy of the network on test set: 81.30 %
+======epoch: 35, lr: 0.09263, Loss: 0.491======
+Accuracy of the network on train set: 79.68 %
+ 18%|█▊        | 35/200 [31:04<2:39:29, 58.00s/it]Accuracy of the network on test set: 82.90 %
+======epoch: 36, lr: 0.09222, Loss: 0.489======
+Accuracy of the network on train set: 81.06 %
+ 18%|█▊        | 36/200 [31:59<2:35:47, 57.00s/it]Accuracy of the network on test set: 83.89 %
+======epoch: 37, lr: 0.09179, Loss: 0.484======
+Accuracy of the network on train set: 83.64 %
+ 18%|█▊        | 37/200 [32:53<2:32:42, 56.21s/it]Accuracy of the network on test set: 85.10 %
+======epoch: 38, lr: 0.09135, Loss: 0.481======
+Accuracy of the network on train set: 76.40 %
+ 19%|█▉        | 38/200 [33:48<2:30:30, 55.74s/it]Accuracy of the network on test set: 77.89 %
+======epoch: 39, lr: 0.09091, Loss: 0.480======
+Accuracy of the network on train set: 81.55 %
+ 20%|█▉        | 39/200 [34:43<2:28:54, 55.49s/it]Accuracy of the network on test set: 83.27 %
+======epoch: 40, lr: 0.09045, Loss: 0.479======
+Accuracy of the network on train set: 78.79 %
+ 20%|██        | 40/200 [35:38<2:27:34, 55.34s/it]Accuracy of the network on test set: 80.56 %
+======epoch: 41, lr: 0.08998, Loss: 0.486======
+Accuracy of the network on train set: 79.70 %
+ 20%|██        | 41/200 [36:32<2:26:12, 55.17s/it]Accuracy of the network on test set: 84.20 %
+======epoch: 42, lr: 0.08951, Loss: 0.470======
+Accuracy of the network on train set: 80.82 %
+ 21%|██        | 42/200 [37:27<2:24:50, 55.00s/it]Accuracy of the network on test set: 82.94 %
+======epoch: 43, lr: 0.08902, Loss: 0.478======
+Accuracy of the network on train set: 77.08 %
+ 22%|██▏       | 43/200 [38:22<2:23:40, 54.91s/it]Accuracy of the network on test set: 80.36 %
+======epoch: 44, lr: 0.08853, Loss: 0.472======
+Accuracy of the network on train set: 83.26 %
+ 22%|██▏       | 44/200 [39:16<2:22:34, 54.84s/it]Accuracy of the network on test set: 85.61 %
+======epoch: 45, lr: 0.08802, Loss: 0.474======
+Accuracy of the network on train set: 74.88 %
+ 22%|██▎       | 45/200 [40:11<2:21:29, 54.77s/it]Accuracy of the network on test set: 79.09 %
+======epoch: 46, lr: 0.08751, Loss: 0.462======
+Accuracy of the network on train set: 76.44 %
+ 23%|██▎       | 46/200 [41:06<2:20:21, 54.68s/it]Accuracy of the network on test set: 77.88 %
+======epoch: 47, lr: 0.08698, Loss: 0.464======
+Accuracy of the network on train set: 83.38 %
+ 24%|██▎       | 47/200 [42:00<2:19:24, 54.67s/it]Accuracy of the network on test set: 86.05 %
+======epoch: 48, lr: 0.08645, Loss: 0.458======
+Accuracy of the network on train set: 83.26 %
+ 24%|██▍       | 48/200 [42:55<2:18:30, 54.67s/it]Accuracy of the network on test set: 85.54 %
+======epoch: 49, lr: 0.08591, Loss: 0.456======
+Accuracy of the network on train set: 80.07 %
+ 24%|██▍       | 49/200 [43:50<2:17:39, 54.70s/it]Accuracy of the network on test set: 82.73 %
+======epoch: 50, lr: 0.08536, Loss: 0.460======
+Accuracy of the network on train set: 79.41 %
+ 25%|██▌       | 50/200 [44:44<2:16:45, 54.71s/it]Accuracy of the network on test set: 81.12 %
+======epoch: 51, lr: 0.08480, Loss: 0.451======
+Accuracy of the network on train set: 84.09 %
+ 26%|██▌       | 51/200 [45:39<2:15:51, 54.71s/it]Accuracy of the network on test set: 86.35 %
+======epoch: 52, lr: 0.08423, Loss: 0.457======
+Accuracy of the network on train set: 82.13 %
+ 26%|██▌       | 52/200 [46:34<2:14:56, 54.71s/it]Accuracy of the network on test set: 84.39 %
+======epoch: 53, lr: 0.08365, Loss: 0.445======
+Accuracy of the network on train set: 84.39 %
+ 26%|██▋       | 53/200 [47:15<2:03:50, 50.55s/it]Accuracy of the network on test set: 86.02 %
+======epoch: 54, lr: 0.08307, Loss: 0.444======
+Accuracy of the network on train set: 79.92 %
+ 27%|██▋       | 54/200 [48:00<1:59:20, 49.05s/it]Accuracy of the network on test set: 83.33 %
+======epoch: 55, lr: 0.08247, Loss: 0.451======
+Accuracy of the network on train set: 79.79 %
+ 28%|██▊       | 55/200 [48:55<2:02:27, 50.67s/it]Accuracy of the network on test set: 82.03 %
+======epoch: 56, lr: 0.08187, Loss: 0.448======
+Accuracy of the network on train set: 80.78 %
+ 28%|██▊       | 56/200 [49:49<2:04:09, 51.73s/it]Accuracy of the network on test set: 83.00 %
+======epoch: 57, lr: 0.08126, Loss: 0.440======
+Accuracy of the network on train set: 81.88 %
+ 28%|██▊       | 57/200 [50:43<2:05:07, 52.50s/it]Accuracy of the network on test set: 83.98 %
+======epoch: 58, lr: 0.08065, Loss: 0.438======
+Accuracy of the network on train set: 79.21 %
+ 29%|██▉       | 58/200 [51:38<2:05:42, 53.11s/it]Accuracy of the network on test set: 81.77 %
+======epoch: 59, lr: 0.08002, Loss: 0.439======
+Accuracy of the network on train set: 81.66 %
+ 30%|██▉       | 59/200 [52:32<2:05:52, 53.56s/it]Accuracy of the network on test set: 84.71 %
+======epoch: 60, lr: 0.07939, Loss: 0.433======
+Accuracy of the network on train set: 80.27 %
+ 30%|███       | 60/200 [53:27<2:05:41, 53.87s/it]Accuracy of the network on test set: 83.00 %
+======epoch: 61, lr: 0.07875, Loss: 0.426======
+Accuracy of the network on train set: 82.64 %
+ 30%|███       | 61/200 [54:21<2:05:14, 54.06s/it]Accuracy of the network on test set: 84.51 %
+======epoch: 62, lr: 0.07810, Loss: 0.431======
+Accuracy of the network on train set: 82.41 %
+ 31%|███       | 62/200 [55:16<2:04:35, 54.17s/it]Accuracy of the network on test set: 84.51 %
+======epoch: 63, lr: 0.07745, Loss: 0.425======
+Accuracy of the network on train set: 78.78 %
+ 32%|███▏      | 63/200 [56:10<2:03:57, 54.29s/it]Accuracy of the network on test set: 81.79 %
+======epoch: 64, lr: 0.07679, Loss: 0.420======
+Accuracy of the network on train set: 82.71 %
+ 32%|███▏      | 64/200 [57:05<2:03:17, 54.40s/it]Accuracy of the network on test set: 85.88 %
+======epoch: 65, lr: 0.07612, Loss: 0.419======
+Accuracy of the network on train set: 81.22 %
+ 32%|███▎      | 65/200 [58:00<2:02:29, 54.44s/it]Accuracy of the network on test set: 83.68 %
+======epoch: 66, lr: 0.07545, Loss: 0.424======
+Accuracy of the network on train set: 82.47 %
+ 33%|███▎      | 66/200 [58:54<2:01:28, 54.39s/it]Accuracy of the network on test set: 84.03 %
+======epoch: 67, lr: 0.07477, Loss: 0.418======
+Accuracy of the network on train set: 82.91 %
+ 34%|███▎      | 67/200 [59:49<2:00:50, 54.52s/it]Accuracy of the network on test set: 85.25 %
+======epoch: 68, lr: 0.07409, Loss: 0.413======
+Accuracy of the network on train set: 84.66 %
+ 34%|███▍      | 68/200 [1:00:43<2:00:02, 54.57s/it]Accuracy of the network on test set: 86.44 %
+======epoch: 69, lr: 0.07340, Loss: 0.412======
+Accuracy of the network on train set: 81.78 %
+ 34%|███▍      | 69/200 [1:01:38<1:59:20, 54.66s/it]Accuracy of the network on test set: 84.21 %
+======epoch: 70, lr: 0.07270, Loss: 0.412======
+Accuracy of the network on train set: 81.70 %
+ 35%|███▌      | 70/200 [1:02:33<1:58:35, 54.73s/it]Accuracy of the network on test set: 84.18 %
+======epoch: 71, lr: 0.07200, Loss: 0.404======
+Accuracy of the network on train set: 83.79 %
+ 36%|███▌      | 71/200 [1:03:28<1:57:51, 54.82s/it]Accuracy of the network on test set: 85.03 %
+======epoch: 72, lr: 0.07129, Loss: 0.411======
+Accuracy of the network on train set: 85.18 %
+ 36%|███▌      | 72/200 [1:04:23<1:57:02, 54.86s/it]Accuracy of the network on test set: 87.36 %
+======epoch: 73, lr: 0.07058, Loss: 0.398======
+Accuracy of the network on train set: 79.91 %
+ 36%|███▋      | 73/200 [1:05:18<1:56:02, 54.82s/it]Accuracy of the network on test set: 82.08 %
+======epoch: 74, lr: 0.06986, Loss: 0.404======
+Accuracy of the network on train set: 82.55 %
+ 37%|███▋      | 74/200 [1:06:13<1:55:11, 54.85s/it]Accuracy of the network on test set: 84.59 %
+======epoch: 75, lr: 0.06913, Loss: 0.399======
+Accuracy of the network on train set: 85.66 %
+ 38%|███▊      | 75/200 [1:07:07<1:54:07, 54.78s/it]Accuracy of the network on test set: 87.44 %
+======epoch: 76, lr: 0.06841, Loss: 0.398======
+Accuracy of the network on train set: 83.65 %
+ 38%|███▊      | 76/200 [1:08:02<1:53:08, 54.74s/it]Accuracy of the network on test set: 85.82 %
+======epoch: 77, lr: 0.06767, Loss: 0.396======
+Accuracy of the network on train set: 85.38 %
+ 38%|███▊      | 77/200 [1:08:57<1:52:19, 54.79s/it]Accuracy of the network on test set: 87.40 %
+======epoch: 78, lr: 0.06694, Loss: 0.393======
+Accuracy of the network on train set: 82.72 %
+ 39%|███▉      | 78/200 [1:09:52<1:51:25, 54.80s/it]Accuracy of the network on test set: 84.21 %
+======epoch: 79, lr: 0.06620, Loss: 0.397======
+Accuracy of the network on train set: 84.61 %
+ 40%|███▉      | 79/200 [1:10:46<1:50:27, 54.77s/it]Accuracy of the network on test set: 86.46 %
+======epoch: 80, lr: 0.06545, Loss: 0.384======
+Accuracy of the network on train set: 86.39 %
+ 40%|████      | 80/200 [1:11:41<1:49:25, 54.71s/it]Accuracy of the network on test set: 88.49 %
+======epoch: 81, lr: 0.06470, Loss: 0.381======
+Accuracy of the network on train set: 82.40 %
+ 40%|████      | 81/200 [1:12:36<1:48:40, 54.79s/it]Accuracy of the network on test set: 84.28 %
+======epoch: 82, lr: 0.06395, Loss: 0.376======
+Accuracy of the network on train set: 85.58 %
+ 41%|████      | 82/200 [1:13:31<1:47:39, 54.74s/it]Accuracy of the network on test set: 87.30 %
+======epoch: 83, lr: 0.06319, Loss: 0.382======
+Accuracy of the network on train set: 86.65 %
+ 42%|████▏     | 83/200 [1:14:15<1:40:28, 51.53s/it]Accuracy of the network on test set: 88.01 %
+======epoch: 84, lr: 0.06243, Loss: 0.377======
+Accuracy of the network on train set: 86.05 %
+ 42%|████▏     | 84/200 [1:14:58<1:34:52, 49.08s/it]Accuracy of the network on test set: 87.39 %
+======epoch: 85, lr: 0.06167, Loss: 0.369======
+Accuracy of the network on train set: 85.32 %
+ 42%|████▎     | 85/200 [1:15:52<1:37:11, 50.71s/it]Accuracy of the network on test set: 86.53 %
+======epoch: 86, lr: 0.06091, Loss: 0.370======
+Accuracy of the network on train set: 86.06 %
+ 43%|████▎     | 86/200 [1:16:47<1:38:34, 51.89s/it]Accuracy of the network on test set: 88.02 %
+======epoch: 87, lr: 0.06014, Loss: 0.369======
+Accuracy of the network on train set: 83.07 %
+ 44%|████▎     | 87/200 [1:17:42<1:39:22, 52.76s/it]Accuracy of the network on test set: 85.10 %
+======epoch: 88, lr: 0.05937, Loss: 0.368======
+Accuracy of the network on train set: 86.02 %
+ 44%|████▍     | 88/200 [1:18:37<1:39:38, 53.38s/it]Accuracy of the network on test set: 87.02 %
+======epoch: 89, lr: 0.05860, Loss: 0.355======
+Accuracy of the network on train set: 83.68 %
+ 44%|████▍     | 89/200 [1:19:32<1:39:31, 53.80s/it]Accuracy of the network on test set: 85.54 %
+======epoch: 90, lr: 0.05782, Loss: 0.364======
+Accuracy of the network on train set: 84.32 %
+ 45%|████▌     | 90/200 [1:20:26<1:39:03, 54.03s/it]Accuracy of the network on test set: 85.63 %
+======epoch: 91, lr: 0.05705, Loss: 0.362======
+Accuracy of the network on train set: 84.72 %
+ 46%|████▌     | 91/200 [1:21:21<1:38:28, 54.21s/it]Accuracy of the network on test set: 86.26 %
+======epoch: 92, lr: 0.05627, Loss: 0.359======
+Accuracy of the network on train set: 84.14 %
+ 46%|████▌     | 92/200 [1:22:15<1:37:40, 54.26s/it]Accuracy of the network on test set: 85.40 %
+======epoch: 93, lr: 0.05549, Loss: 0.359======
+Accuracy of the network on train set: 78.11 %
+ 46%|████▋     | 93/200 [1:23:10<1:36:56, 54.36s/it]Accuracy of the network on test set: 82.82 %
+======epoch: 94, lr: 0.05471, Loss: 0.357======
+Accuracy of the network on train set: 81.81 %
+ 47%|████▋     | 94/200 [1:24:04<1:36:02, 54.37s/it]Accuracy of the network on test set: 83.22 %
+======epoch: 95, lr: 0.05392, Loss: 0.346======
+Accuracy of the network on train set: 85.19 %
+ 48%|████▊     | 95/200 [1:24:59<1:35:17, 54.45s/it]Accuracy of the network on test set: 86.11 %
+======epoch: 96, lr: 0.05314, Loss: 0.349======
+Accuracy of the network on train set: 84.79 %
+ 48%|████▊     | 96/200 [1:25:54<1:34:34, 54.56s/it]Accuracy of the network on test set: 86.29 %
+======epoch: 97, lr: 0.05236, Loss: 0.345======
+Accuracy of the network on train set: 86.50 %
+ 48%|████▊     | 97/200 [1:26:48<1:33:45, 54.62s/it]Accuracy of the network on test set: 87.37 %
+======epoch: 98, lr: 0.05157, Loss: 0.337======
+Accuracy of the network on train set: 86.59 %
+ 49%|████▉     | 98/200 [1:27:43<1:32:53, 54.64s/it]Accuracy of the network on test set: 87.46 %
+======epoch: 99, lr: 0.05079, Loss: 0.334======
+Accuracy of the network on train set: 86.87 %
+ 50%|████▉     | 99/200 [1:28:38<1:32:02, 54.68s/it]Accuracy of the network on test set: 88.19 %
+======epoch: 100, lr: 0.05000, Loss: 0.331======
+Accuracy of the network on train set: 86.30 %
+ 50%|█████     | 100/200 [1:29:33<1:31:13, 54.74s/it]Accuracy of the network on test set: 87.01 %
+======epoch: 101, lr: 0.04921, Loss: 0.330======
+Accuracy of the network on train set: 86.03 %
+ 50%|█████     | 101/200 [1:30:27<1:30:22, 54.77s/it]Accuracy of the network on test set: 87.72 %
+======epoch: 102, lr: 0.04843, Loss: 0.325======
+Accuracy of the network on train set: 86.27 %
+ 51%|█████     | 102/200 [1:31:22<1:29:25, 54.75s/it]Accuracy of the network on test set: 87.27 %
+======epoch: 103, lr: 0.04764, Loss: 0.316======
+Accuracy of the network on train set: 85.26 %
+ 52%|█████▏    | 103/200 [1:32:17<1:28:26, 54.71s/it]Accuracy of the network on test set: 86.17 %
+======epoch: 104, lr: 0.04686, Loss: 0.320======
+Accuracy of the network on train set: 83.48 %
+ 52%|█████▏    | 104/200 [1:33:12<1:27:32, 54.72s/it]Accuracy of the network on test set: 85.49 %
+======epoch: 105, lr: 0.04608, Loss: 0.322======
+Accuracy of the network on train set: 86.76 %
+ 52%|█████▎    | 105/200 [1:34:06<1:26:40, 54.74s/it]Accuracy of the network on test set: 88.30 %
+======epoch: 106, lr: 0.04529, Loss: 0.312======
+Accuracy of the network on train set: 87.89 %
+ 53%|█████▎    | 106/200 [1:35:01<1:25:46, 54.75s/it]Accuracy of the network on test set: 88.07 %
+======epoch: 107, lr: 0.04451, Loss: 0.315======
+Accuracy of the network on train set: 87.99 %
+ 54%|█████▎    | 107/200 [1:35:56<1:24:50, 54.73s/it]Accuracy of the network on test set: 88.87 %
+======epoch: 108, lr: 0.04373, Loss: 0.315======
+Accuracy of the network on train set: 88.09 %
+ 54%|█████▍    | 108/200 [1:36:51<1:23:59, 54.77s/it]Accuracy of the network on test set: 88.15 %
+======epoch: 109, lr: 0.04295, Loss: 0.303======
+Accuracy of the network on train set: 87.49 %
+ 55%|█████▍    | 109/200 [1:37:45<1:23:04, 54.78s/it]Accuracy of the network on test set: 88.03 %
+======epoch: 110, lr: 0.04218, Loss: 0.306======
+Accuracy of the network on train set: 87.68 %
+ 55%|█████▌    | 110/200 [1:38:40<1:22:04, 54.72s/it]Accuracy of the network on test set: 88.12 %
+======epoch: 111, lr: 0.04140, Loss: 0.298======
+Accuracy of the network on train set: 89.37 %
+ 56%|█████▌    | 111/200 [1:39:35<1:21:15, 54.78s/it]Accuracy of the network on test set: 89.25 %
+======epoch: 112, lr: 0.04063, Loss: 0.301======
+Accuracy of the network on train set: 89.39 %
+ 56%|█████▌    | 112/200 [1:40:30<1:20:19, 54.77s/it]Accuracy of the network on test set: 90.05 %
+======epoch: 113, lr: 0.03986, Loss: 0.293======
+Accuracy of the network on train set: 87.46 %
+ 56%|█████▋    | 113/200 [1:41:18<1:16:30, 52.76s/it]Accuracy of the network on test set: 88.14 %
+======epoch: 114, lr: 0.03909, Loss: 0.286======
+Accuracy of the network on train set: 88.69 %
+ 57%|█████▋    | 114/200 [1:41:59<1:10:27, 49.16s/it]Accuracy of the network on test set: 89.43 %
+======epoch: 115, lr: 0.03833, Loss: 0.285======
+Accuracy of the network on train set: 88.79 %
+ 57%|█████▊    | 115/200 [1:42:52<1:11:24, 50.41s/it]Accuracy of the network on test set: 89.18 %
+======epoch: 116, lr: 0.03757, Loss: 0.283======
+Accuracy of the network on train set: 90.05 %
+ 58%|█████▊    | 116/200 [1:43:46<1:12:18, 51.65s/it]Accuracy of the network on test set: 89.62 %
+======epoch: 117, lr: 0.03681, Loss: 0.281======
+Accuracy of the network on train set: 89.52 %
+ 58%|█████▊    | 117/200 [1:44:41<1:12:39, 52.52s/it]Accuracy of the network on test set: 89.67 %
+======epoch: 118, lr: 0.03605, Loss: 0.279======
+Accuracy of the network on train set: 88.28 %
+ 59%|█████▉    | 118/200 [1:45:35<1:12:35, 53.12s/it]Accuracy of the network on test set: 88.78 %
+======epoch: 119, lr: 0.03530, Loss: 0.270======
+Accuracy of the network on train set: 89.06 %
+ 60%|█████▉    | 119/200 [1:46:30<1:12:18, 53.56s/it]Accuracy of the network on test set: 89.34 %
+======epoch: 120, lr: 0.03455, Loss: 0.271======
+Accuracy of the network on train set: 89.43 %
+ 60%|██████    | 120/200 [1:47:25<1:11:46, 53.84s/it]Accuracy of the network on test set: 89.51 %
+======epoch: 121, lr: 0.03380, Loss: 0.267======
+Accuracy of the network on train set: 90.47 %
+ 60%|██████    | 121/200 [1:48:19<1:11:14, 54.11s/it]Accuracy of the network on test set: 89.74 %
+======epoch: 122, lr: 0.03306, Loss: 0.259======
+Accuracy of the network on train set: 89.06 %
+ 61%|██████    | 122/200 [1:49:14<1:10:31, 54.25s/it]Accuracy of the network on test set: 88.88 %
+======epoch: 123, lr: 0.03233, Loss: 0.262======
+Accuracy of the network on train set: 91.74 %
+ 62%|██████▏   | 123/200 [1:50:08<1:09:43, 54.33s/it]Accuracy of the network on test set: 91.62 %
+======epoch: 124, lr: 0.03159, Loss: 0.253======
+Accuracy of the network on train set: 90.29 %
+ 62%|██████▏   | 124/200 [1:51:03<1:08:55, 54.41s/it]Accuracy of the network on test set: 90.27 %
+======epoch: 125, lr: 0.03087, Loss: 0.252======
+Accuracy of the network on train set: 90.01 %
+ 62%|██████▎   | 125/200 [1:51:58<1:08:08, 54.51s/it]Accuracy of the network on test set: 89.63 %
+======epoch: 126, lr: 0.03014, Loss: 0.244======
+Accuracy of the network on train set: 90.73 %
+ 63%|██████▎   | 126/200 [1:52:52<1:07:18, 54.57s/it]Accuracy of the network on test set: 91.06 %
+======epoch: 127, lr: 0.02942, Loss: 0.244======
+Accuracy of the network on train set: 90.17 %
+ 64%|██████▎   | 127/200 [1:53:47<1:06:22, 54.55s/it]Accuracy of the network on test set: 89.26 %
+======epoch: 128, lr: 0.02871, Loss: 0.244======
+Accuracy of the network on train set: 91.55 %
+ 64%|██████▍   | 128/200 [1:54:41<1:05:27, 54.55s/it]Accuracy of the network on test set: 90.98 %
+======epoch: 129, lr: 0.02800, Loss: 0.241======
+Accuracy of the network on train set: 91.95 %
+ 64%|██████▍   | 129/200 [1:55:36<1:04:38, 54.63s/it]Accuracy of the network on test set: 91.53 %
+======epoch: 130, lr: 0.02730, Loss: 0.234======
+Accuracy of the network on train set: 91.89 %
+ 65%|██████▌   | 130/200 [1:56:31<1:03:46, 54.67s/it]Accuracy of the network on test set: 91.41 %
+======epoch: 131, lr: 0.02660, Loss: 0.234======
+Accuracy of the network on train set: 90.37 %
+ 66%|██████▌   | 131/200 [1:57:26<1:02:51, 54.66s/it]Accuracy of the network on test set: 90.01 %
+======epoch: 132, lr: 0.02591, Loss: 0.227======
+Accuracy of the network on train set: 91.17 %
+ 66%|██████▌   | 132/200 [1:58:20<1:01:59, 54.70s/it]Accuracy of the network on test set: 90.93 %
+======epoch: 133, lr: 0.02523, Loss: 0.227======
+Accuracy of the network on train set: 89.70 %
+ 66%|██████▋   | 133/200 [1:59:15<1:01:05, 54.71s/it]Accuracy of the network on test set: 88.93 %
+======epoch: 134, lr: 0.02455, Loss: 0.221======
+Accuracy of the network on train set: 91.40 %
+ 67%|██████▋   | 134/200 [2:00:10<1:00:11, 54.73s/it]Accuracy of the network on test set: 90.11 %
+======epoch: 135, lr: 0.02388, Loss: 0.216======
+Accuracy of the network on train set: 91.31 %
+ 68%|██████▊   | 135/200 [2:01:05<59:21, 54.79s/it]  Accuracy of the network on test set: 90.74 %
+======epoch: 136, lr: 0.02321, Loss: 0.218======
+Accuracy of the network on train set: 91.53 %
+ 68%|██████▊   | 136/200 [2:02:00<58:27, 54.80s/it]Accuracy of the network on test set: 91.00 %
+======epoch: 137, lr: 0.02255, Loss: 0.211======
+Accuracy of the network on train set: 92.80 %
+ 68%|██████▊   | 137/200 [2:02:55<57:33, 54.82s/it]Accuracy of the network on test set: 91.62 %
+======epoch: 138, lr: 0.02190, Loss: 0.204======
+Accuracy of the network on train set: 91.85 %
+ 69%|██████▉   | 138/200 [2:03:50<56:41, 54.86s/it]Accuracy of the network on test set: 91.21 %
+======epoch: 139, lr: 0.02125, Loss: 0.200======
+Accuracy of the network on train set: 92.97 %
+ 70%|██████▉   | 139/200 [2:04:45<55:49, 54.90s/it]Accuracy of the network on test set: 91.89 %
+======epoch: 140, lr: 0.02061, Loss: 0.200======
+Accuracy of the network on train set: 93.02 %
+ 70%|███████   | 140/200 [2:05:39<54:50, 54.83s/it]Accuracy of the network on test set: 92.03 %
+======epoch: 141, lr: 0.01998, Loss: 0.196======
+Accuracy of the network on train set: 92.62 %
+ 70%|███████   | 141/200 [2:06:34<53:55, 54.85s/it]Accuracy of the network on test set: 91.51 %
+======epoch: 142, lr: 0.01935, Loss: 0.195======
+Accuracy of the network on train set: 93.18 %
+ 71%|███████   | 142/200 [2:07:29<53:00, 54.84s/it]Accuracy of the network on test set: 91.59 %
+======epoch: 143, lr: 0.01874, Loss: 0.185======
+Accuracy of the network on train set: 92.96 %
+ 72%|███████▏  | 143/200 [2:08:20<51:04, 53.77s/it]Accuracy of the network on test set: 91.73 %
+======epoch: 144, lr: 0.01813, Loss: 0.186======
+Accuracy of the network on train set: 93.71 %
+ 72%|███████▏  | 144/200 [2:09:01<46:35, 49.92s/it]Accuracy of the network on test set: 92.09 %
+======epoch: 145, lr: 0.01753, Loss: 0.181======
+Accuracy of the network on train set: 92.28 %
+ 72%|███████▎  | 145/200 [2:09:42<43:10, 47.09s/it]Accuracy of the network on test set: 90.99 %
+======epoch: 146, lr: 0.01693, Loss: 0.177======
+Accuracy of the network on train set: 93.84 %
+ 73%|███████▎  | 146/200 [2:10:22<40:34, 45.08s/it]Accuracy of the network on test set: 91.99 %
+======epoch: 147, lr: 0.01635, Loss: 0.175======
+Accuracy of the network on train set: 93.98 %
+ 74%|███████▎  | 147/200 [2:11:02<38:32, 43.63s/it]Accuracy of the network on test set: 92.03 %
+======epoch: 148, lr: 0.01577, Loss: 0.167======
+Accuracy of the network on train set: 94.15 %
+ 74%|███████▍  | 148/200 [2:11:43<37:00, 42.70s/it]Accuracy of the network on test set: 92.30 %
+======epoch: 149, lr: 0.01520, Loss: 0.167======
+Accuracy of the network on train set: 94.50 %
+ 74%|███████▍  | 149/200 [2:12:23<35:43, 42.02s/it]Accuracy of the network on test set: 92.53 %
+======epoch: 150, lr: 0.01464, Loss: 0.165======
+Accuracy of the network on train set: 93.96 %
+ 75%|███████▌  | 150/200 [2:13:04<34:35, 41.51s/it]Accuracy of the network on test set: 92.16 %
+======epoch: 151, lr: 0.01409, Loss: 0.155======
+Accuracy of the network on train set: 94.29 %
+ 76%|███████▌  | 151/200 [2:13:44<33:39, 41.22s/it]Accuracy of the network on test set: 92.41 %
+======epoch: 152, lr: 0.01355, Loss: 0.153======
+Accuracy of the network on train set: 94.40 %
+ 76%|███████▌  | 152/200 [2:14:24<32:46, 40.97s/it]Accuracy of the network on test set: 92.06 %
+======epoch: 153, lr: 0.01302, Loss: 0.154======
+Accuracy of the network on train set: 94.55 %
+ 76%|███████▋  | 153/200 [2:15:05<31:57, 40.80s/it]Accuracy of the network on test set: 92.55 %
+======epoch: 154, lr: 0.01249, Loss: 0.152======
+Accuracy of the network on train set: 94.67 %
+ 77%|███████▋  | 154/200 [2:15:45<31:11, 40.68s/it]Accuracy of the network on test set: 92.40 %
+======epoch: 155, lr: 0.01198, Loss: 0.143======
+Accuracy of the network on train set: 95.06 %
+ 78%|███████▊  | 155/200 [2:16:26<30:29, 40.65s/it]Accuracy of the network on test set: 93.18 %
+======epoch: 156, lr: 0.01147, Loss: 0.139======
+Accuracy of the network on train set: 95.19 %
+ 78%|███████▊  | 156/200 [2:17:06<29:45, 40.58s/it]Accuracy of the network on test set: 92.73 %
+======epoch: 157, lr: 0.01098, Loss: 0.133======
+Accuracy of the network on train set: 95.61 %
+ 78%|███████▊  | 157/200 [2:17:47<29:04, 40.56s/it]Accuracy of the network on test set: 93.30 %
+======epoch: 158, lr: 0.01049, Loss: 0.133======
+Accuracy of the network on train set: 95.86 %
+ 79%|███████▉  | 158/200 [2:18:27<28:23, 40.56s/it]Accuracy of the network on test set: 93.21 %
+======epoch: 159, lr: 0.01002, Loss: 0.127======
+Accuracy of the network on train set: 95.89 %
+ 80%|███████▉  | 159/200 [2:19:08<27:42, 40.55s/it]Accuracy of the network on test set: 93.21 %
+======epoch: 160, lr: 0.00955, Loss: 0.122======
+Accuracy of the network on train set: 95.88 %
+ 80%|████████  | 160/200 [2:19:48<27:01, 40.55s/it]Accuracy of the network on test set: 93.08 %
+======epoch: 161, lr: 0.00909, Loss: 0.121======
+Accuracy of the network on train set: 96.11 %
+ 80%|████████  | 161/200 [2:20:29<26:19, 40.51s/it]Accuracy of the network on test set: 93.71 %
+======epoch: 162, lr: 0.00865, Loss: 0.116======
+Accuracy of the network on train set: 95.90 %
+ 81%|████████  | 162/200 [2:21:09<25:38, 40.48s/it]Accuracy of the network on test set: 93.44 %
+======epoch: 163, lr: 0.00821, Loss: 0.110======
+Accuracy of the network on train set: 96.63 %
+ 82%|████████▏ | 163/200 [2:21:50<24:59, 40.52s/it]Accuracy of the network on test set: 94.12 %
+======epoch: 164, lr: 0.00778, Loss: 0.108======
+Accuracy of the network on train set: 96.43 %
+ 82%|████████▏ | 164/200 [2:22:31<24:20, 40.56s/it]Accuracy of the network on test set: 94.15 %
+======epoch: 165, lr: 0.00737, Loss: 0.105======
+Accuracy of the network on train set: 96.63 %
+ 82%|████████▎ | 165/200 [2:23:11<23:38, 40.53s/it]Accuracy of the network on test set: 94.04 %
+======epoch: 166, lr: 0.00696, Loss: 0.104======
+Accuracy of the network on train set: 96.76 %
+ 83%|████████▎ | 166/200 [2:23:51<22:56, 40.49s/it]Accuracy of the network on test set: 94.19 %
+======epoch: 167, lr: 0.00657, Loss: 0.102======
+Accuracy of the network on train set: 96.71 %
+ 84%|████████▎ | 167/200 [2:24:32<22:16, 40.50s/it]Accuracy of the network on test set: 94.26 %
+======epoch: 168, lr: 0.00618, Loss: 0.094======
+Accuracy of the network on train set: 97.18 %
+ 84%|████████▍ | 168/200 [2:25:13<21:37, 40.55s/it]Accuracy of the network on test set: 94.53 %
+======epoch: 169, lr: 0.00581, Loss: 0.092======
+Accuracy of the network on train set: 97.24 %
+ 84%|████████▍ | 169/200 [2:25:53<20:57, 40.56s/it]Accuracy of the network on test set: 94.28 %
+======epoch: 170, lr: 0.00545, Loss: 0.091======
+Accuracy of the network on train set: 97.26 %
+ 85%|████████▌ | 170/200 [2:26:33<20:13, 40.45s/it]Accuracy of the network on test set: 94.71 %
+======epoch: 171, lr: 0.00510, Loss: 0.089======
+Accuracy of the network on train set: 97.41 %
+ 86%|████████▌ | 171/200 [2:27:14<19:33, 40.46s/it]Accuracy of the network on test set: 94.73 %
+======epoch: 172, lr: 0.00476, Loss: 0.086======
+Accuracy of the network on train set: 97.44 %
+ 86%|████████▌ | 172/200 [2:27:54<18:52, 40.45s/it]Accuracy of the network on test set: 94.44 %
+======epoch: 173, lr: 0.00443, Loss: 0.077======
+Accuracy of the network on train set: 97.44 %
+ 86%|████████▋ | 173/200 [2:28:35<18:12, 40.48s/it]Accuracy of the network on test set: 94.73 %
+======epoch: 174, lr: 0.00411, Loss: 0.080======
+Accuracy of the network on train set: 97.64 %
+ 87%|████████▋ | 174/200 [2:29:15<17:32, 40.50s/it]Accuracy of the network on test set: 94.67 %
+======epoch: 175, lr: 0.00381, Loss: 0.083======
+Accuracy of the network on train set: 97.63 %
+ 88%|████████▊ | 175/200 [2:29:56<16:51, 40.48s/it]Accuracy of the network on test set: 94.66 %
+======epoch: 176, lr: 0.00351, Loss: 0.078======
+Accuracy of the network on train set: 97.63 %
+ 88%|████████▊ | 176/200 [2:30:36<16:10, 40.45s/it]Accuracy of the network on test set: 94.88 %
+======epoch: 177, lr: 0.00323, Loss: 0.071======
+Accuracy of the network on train set: 97.91 %
+ 88%|████████▊ | 177/200 [2:31:17<15:31, 40.50s/it]Accuracy of the network on test set: 94.90 %
+======epoch: 178, lr: 0.00296, Loss: 0.068======
+Accuracy of the network on train set: 97.92 %
+ 89%|████████▉ | 178/200 [2:31:57<14:51, 40.51s/it]Accuracy of the network on test set: 95.03 %
+======epoch: 179, lr: 0.00270, Loss: 0.069======
+Accuracy of the network on train set: 97.85 %
+ 90%|████████▉ | 179/200 [2:32:38<14:11, 40.53s/it]Accuracy of the network on test set: 94.93 %
+======epoch: 180, lr: 0.00245, Loss: 0.066======
+Accuracy of the network on train set: 97.98 %
+ 90%|█████████ | 180/200 [2:33:18<13:29, 40.49s/it]Accuracy of the network on test set: 94.95 %
+======epoch: 181, lr: 0.00221, Loss: 0.065======
+Accuracy of the network on train set: 98.07 %
+ 90%|█████████ | 181/200 [2:33:59<12:48, 40.44s/it]Accuracy of the network on test set: 95.06 %
+======epoch: 182, lr: 0.00199, Loss: 0.067======
+Accuracy of the network on train set: 98.17 %
+ 91%|█████████ | 182/200 [2:34:39<12:08, 40.46s/it]Accuracy of the network on test set: 94.95 %
+======epoch: 183, lr: 0.00177, Loss: 0.059======
+Accuracy of the network on train set: 98.16 %
+ 92%|█████████▏| 183/200 [2:35:19<11:27, 40.44s/it]Accuracy of the network on test set: 95.23 %
+======epoch: 184, lr: 0.00157, Loss: 0.060======
+Accuracy of the network on train set: 98.26 %
+ 92%|█████████▏| 184/200 [2:36:00<10:46, 40.42s/it]Accuracy of the network on test set: 95.36 %
+======epoch: 185, lr: 0.00138, Loss: 0.059======
+Accuracy of the network on train set: 98.14 %
+ 92%|█████████▎| 185/200 [2:36:29<09:16, 37.12s/it]Accuracy of the network on test set: 95.30 %
+======epoch: 186, lr: 0.00120, Loss: 0.057======
+Accuracy of the network on train set: 98.22 %
+ 93%|█████████▎| 186/200 [2:36:56<07:54, 33.87s/it]Accuracy of the network on test set: 95.20 %
+======epoch: 187, lr: 0.00104, Loss: 0.056======
+Accuracy of the network on train set: 98.33 %
+ 94%|█████████▎| 187/200 [2:37:22<06:50, 31.58s/it]Accuracy of the network on test set: 95.35 %
+======epoch: 188, lr: 0.00089, Loss: 0.055======
+Accuracy of the network on train set: 98.31 %
+ 94%|█████████▍| 188/200 [2:37:48<05:59, 29.97s/it]Accuracy of the network on test set: 95.36 %
+======epoch: 189, lr: 0.00074, Loss: 0.056======
+Accuracy of the network on train set: 98.39 %
+ 94%|█████████▍| 189/200 [2:38:14<05:16, 28.81s/it]Accuracy of the network on test set: 95.25 %
+======epoch: 190, lr: 0.00062, Loss: 0.054======
+Accuracy of the network on train set: 98.30 %
+ 95%|█████████▌| 190/200 [2:38:40<04:39, 27.98s/it]Accuracy of the network on test set: 95.21 %
+======epoch: 191, lr: 0.00050, Loss: 0.052======
+Accuracy of the network on train set: 98.44 %
+ 96%|█████████▌| 191/200 [2:39:06<04:06, 27.39s/it]Accuracy of the network on test set: 95.27 %
+======epoch: 192, lr: 0.00039, Loss: 0.052======
+Accuracy of the network on train set: 98.46 %
+ 96%|█████████▌| 192/200 [2:39:32<03:35, 26.97s/it]Accuracy of the network on test set: 95.29 %
+======epoch: 193, lr: 0.00030, Loss: 0.054======
+Accuracy of the network on train set: 98.42 %
+ 96%|█████████▋| 193/200 [2:39:58<03:06, 26.66s/it]Accuracy of the network on test set: 95.37 %
+======epoch: 194, lr: 0.00022, Loss: 0.052======
+Accuracy of the network on train set: 98.42 %
+ 97%|█████████▋| 194/200 [2:40:15<02:21, 23.63s/it]Accuracy of the network on test set: 95.37 %
+======epoch: 195, lr: 0.00015, Loss: 0.050======
+Accuracy of the network on train set: 98.48 %
+ 98%|█████████▊| 195/200 [2:40:31<01:47, 21.44s/it]Accuracy of the network on test set: 95.34 %
+======epoch: 196, lr: 0.00010, Loss: 0.051======
+Accuracy of the network on train set: 98.37 %
+ 98%|█████████▊| 196/200 [2:40:47<01:19, 19.91s/it]Accuracy of the network on test set: 95.36 %
+======epoch: 197, lr: 0.00006, Loss: 0.051======
+Accuracy of the network on train set: 98.45 %
+ 98%|█████████▊| 197/200 [2:41:04<00:56, 18.81s/it]Accuracy of the network on test set: 95.40 %
+======epoch: 198, lr: 0.00002, Loss: 0.050======
+Accuracy of the network on train set: 98.45 %
+ 99%|█████████▉| 198/200 [2:41:20<00:36, 18.12s/it]Accuracy of the network on test set: 95.42 %
+======epoch: 199, lr: 0.00001, Loss: 0.051======
+Accuracy of the network on train set: 98.54 %
+100%|█████████▉| 199/200 [2:41:36<00:17, 17.57s/it]Accuracy of the network on test set: 95.38 %
+======epoch: 200, lr: 0.00000, Loss: 0.052======
+Accuracy of the network on train set: 98.39 %
+100%|██████████| 200/200 [2:41:53<00:00, 17.14s/it]
+Accuracy of the network on test set: 95.40 %
+Finished Training! Totally Training Time Cost 9713.020115613937 
+
