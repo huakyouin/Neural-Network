@@ -2,6 +2,8 @@
 
 > Note: 如需复现请将工作区加载到router.py所在路径, 然后命令行输入以下代码
 
+> Note: 本实验除了pytorch外还需要安装tqdm,fire,matplotlib模块
+
 # Stage 1: try different models
 
 **ResNet18**
