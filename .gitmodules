@@ -1,6 +1,6 @@
 [submodule "DessiBLI"]
 	path = DessiBLI
-	url = https://github.com/huakyouin/DATA130011.01-records.git
+	url = https://github.com/huakyouin/DATA130011.01-records/tree/DessiBLI
 	branch = DessiBLI
 [submodule "examples"]
 	path = examples
