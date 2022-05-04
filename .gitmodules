@@ -1,7 +1,7 @@
 [submodule "DessiBLI"]
 	path = DessiBLI
-	url = https://github.com/huakyouin/DATA130011.01-records/tree/DessiBLI
-	branch = DessiBLI
+	url = https://github.com/huakyouin/DessiBLI.git
+	branch = main
 [submodule "examples"]
 	path = examples
 	url = https://github.com/hpcaitech/ColossalAI-Examples.git
