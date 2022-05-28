@@ -4,8 +4,8 @@
 
 ```bash
 |-- coco
-|		|-- train2014
-|		|-- val2014
+|   |-- train2014
+|	|-- val2014
 |-- ntt
 ```
 
