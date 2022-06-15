@@ -12,3 +12,5 @@ Neural-Network-and-Deep-Learning(神经网络与深度学习)
 · PJ2：CIFAR-10上的网络模型、BatchNorm深入研究和DessiBLI
 
 · PJ3：Novel Object Caption，复现了BLIP和Neural Baby Talk
+
+· PJ4：少样本甲骨文学习，使用简单的技术组合超越复杂模型
